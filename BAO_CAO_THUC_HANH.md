@@ -1,182 +1,105 @@
-# BÁO CÁO THỰC HÀNH: CHUẨN HÓA HỒ SƠ CỘNG ĐỒNG DỰ ÁN OSS
+# Báo cáo thực hành: chuẩn hóa hồ sơ cộng đồng dự án OSS
 
-- **Thời gian thực hiện:** 2026-09-28
-- **Thư mục dự án:** `/home/nvhoai/projects/personal/opensource/oss`
-- **Tài liệu gốc:** `lab_guide_standardizing_oss_community_profile.md`
-- **Link repository:** https://github.com/nv-hoai/oss (public, nhánh mặc định `main`)
+- Ngày thực hiện: 28/09/2026
+- Repo: https://github.com/nv-hoai/oss (public, nhánh mặc định `main`)
 
----
+## Tóm tắt
 
-## 1. Tổng hợp kết quả theo yêu cầu
+Repo `oss` đã có đủ bộ hồ sơ cộng đồng theo yêu cầu: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `README.md`, và hai mẫu tự động nằm trong thư mục `.github` là `ISSUE_TEMPLATE/bug_report.yml` với `PULL_REQUEST_TEMPLATE.md`. Toàn bộ đã được commit và push lên nhánh `main`.
 
-| # | Bước / Yêu cầu | Tệp tin đầu ra | Trạng thái |
-| :-: | :--- | :--- | :-: |
-| 1 | Kích hoạt giấy phép bản quyền MIT | `LICENSE` | ✅ Hoàn thành |
-| 2 | Soạn thảo cẩm nang đóng góp | `CONTRIBUTING.md` | ✅ Hoàn thành |
-| 3 | Quy ước ứng xử cộng đồng | `CODE_OF_CONDUCT.md` | ✅ Hoàn thành |
-| 4 | Chính sách bảo mật | `SECURITY.md` | ✅ Hoàn thành |
-| 5 | Biểu mẫu Issue tự động | `.github/ISSUE_TEMPLATE/bug_report.yml` | ✅ Hoàn thành |
-| 6 | Biểu mẫu Pull Request tự động | `.github/PULL_REQUEST_TEMPLATE.md` | ✅ Hoàn thành |
-| — | Mặt tiền trang chủ dự án | `README.md` | ✅ Hoàn thành |
-| — | Ảnh chụp màn hình minh chứng | `screenshots/` (9 ảnh) | ✅ Hoàn thành (thiếu 1 ảnh cần đăng nhập — xem mục 6) |
+## Chi tiết từng file
 
-> **Kết luận:** 7/7 tệp tin trong cấu trúc hồ sơ cộng đồng hoàn chỉnh đã được tạo đúng vị trí và đúng nội dung theo hướng dẫn.
+### LICENSE
 
----
+Dùng giấy phép MIT. Mình ghi năm 2026 và tên người giữ bản quyền là Nguyen Hoai, lấy theo git config trên máy (nếu muốn tên khác chỉ cần sửa lại dòng Copyright).
 
-## 2. Chi tiết từng bước
+### CONTRIBUTING.md
 
-### Bước 1 — `LICENSE` (Giấy phép MIT)
+Giữ đúng khung trong đề bài: quy trình fork repo, tạo nhánh `feat/...`, commit theo Conventional Commits rồi mở PR về `main`; phần quy chuẩn code nhắc viết C với 4 khoảng trắng, đặt tên `snake_case` và bắt buộc có comment mô tả cho hàm mới.
 
-- **Yêu cầu:** Giấy phép MIT, năm 2026, tên đầy đủ của tác giả.
-- **Thực hiện:** Tạo tệp `LICENSE` với nội dung chuẩn của MIT License.
-- **Thông tin điền:** `Copyright (c) 2026 Nguyen Hoai`
-  - Tên tác giả lấy từ cấu hình Git cục bộ (`user.name = nv-hoai`, `user.email = nguyenhoai0990@gmail.com`). *Vui lòng đổi lại nếu muốn dùng tên khác.*
-- **Kiểm tra:**
-  ```text
-  MIT License
-  Copyright (c) 2026 Nguyen Hoai
-  ```
+### CODE_OF_CONDUCT.md
 
-### Bước 2 — `CONTRIBUTING.md` (Cẩm nang đóng góp)
+Viết theo tinh thần Contributor Covenant, chia làm 4 phần: cam kết, hành vi nên làm, hành vi không chấp nhận, và cách xử lý khi có vi phạm. Email nhận báo cáo tạm để theo mẫu là `admin-project@email.com`.
 
-- **Yêu cầu:** Quy trình workflow (Fork ➔ nhánh `feat/...` ➔ commit Conventional Commits ➔ PR về `main`) và quy chuẩn code C (4 spaces, `snake_case`, comment ở file header).
-- **Thực hiện:** Sao chép nguyên khung chuẩn trong tài liệu, giữ nguyên các mục:
-  - 🚀 Quy trình làm việc (Workflow) — gồm lệnh `git checkout -b feat/ten-tinh-nang`.
-  - 🎨 Quy chuẩn viết code (Coding Standards).
+### SECURITY.md
 
-### Bước 3 — `CODE_OF_CONDUCT.md` (Quy ước ứng xử)
+Hướng dẫn báo lỗ hổng riêng tư thay vì mở Issue công khai, kèm bảng các phiên bản còn được hỗ trợ (`v2.x.x`, `v1.5.x`, và các bản cũ hơn `< v1.4.0`) và cam kết phản hồi trong 48 giờ. Email tạm để theo mẫu là `security-report@yourdomain.com`.
 
-- **Yêu cầu:** Chuẩn Contributor Covenant; bảo vệ thành viên khỏi bắt nạt/phân biệt đối xử; có cơ chế thực thi và email báo cáo.
-- **Thực hiện:** Tạo 4 mục: Cam kết, Hành vi chuẩn mực, Hành vi không chấp nhận, Cơ chế thực thi.
-- **Thông tin điền:** email báo cáo `admin-project@email.com` (giữ theo khung mẫu).
+### .github/ISSUE_TEMPLATE/bug_report.yml
 
-### Bước 4 — `SECURITY.md` (Chính sách bảo mật)
+Biểu mẫu dạng YAML của GitHub Issue Forms, tự hiện khi bấm New Issue. Có tiêu đề `[BUG]`, nhãn `type/bug` và `triage-needed`, cùng 3 trường bắt buộc: mô tả lỗi, các bước tái hiện, và chọn hệ điều hành.
 
-- **Yêu cầu:** Hướng dẫn báo cáo lỗ hổng riêng tư (không mở Issue công khai), bảng phiên bản hỗ trợ, cam kết phản hồi 48h.
-- **Thực hiện:** Tạo 3 mục, gồm bảng Supported Versions (`v2.x.x`, `v1.5.x`, `< v1.4.0`).
-- **Thông tin điền:** email `security-report@yourdomain.com` (giữ theo khung mẫu — nên đổi thành email thật khi triển khai).
+### .github/PULL_REQUEST_TEMPLATE.md
 
-### Bước 5 — `.github/ISSUE_TEMPLATE/bug_report.yml` (Issue Form)
+Mẫu PR gồm 4 phần: tổng quan thay đổi, danh sách thay đổi chi tiết, hướng dẫn kiểm thử, và checklist để tác giả tự tick trước khi gửi.
 
-- **Yêu cầu:** Biểu mẫu YAML chuẩn GitHub Issue Forms, tự hiện khi bấm **New Issue**.
-- **Thực hiện:** Tạo đúng đường dẫn thư mục ẩn; nội dung gồm:
-  - `name`, `description`, `title: "[BUG]: ..."`, `labels: ["type/bug", "triage-needed"]`.
-  - Các trường bắt buộc: `bug-description`, `steps-to-reproduce`, `operating-system` (dropdown 3 hệ điều hành).
-- **Kiểm tra cấu trúc:** Đã xác nhận các field id và thuộc tính `validations.required: true`.
+### README.md
 
-### Bước 6 — `.github/PULL_REQUEST_TEMPLATE.md` (PR Template)
+Trang chủ liệt kê các file hồ sơ cộng đồng kèm liên kết tới từng file.
 
-- **Yêu cầu:** Biểu mẫu tự hiện khi mở Pull Request, gồm 4 phần: Tổng quan, Thay đổi chi tiết, Hướng dẫn kiểm thử, Checklist tác giả.
-- **Thực hiện:** Tạo đúng tên viết hoa `PULL_REQUEST_TEMPLATE.md` trong thư mục `.github/`, giữ nguyên checklist 4 ô `[ ]`.
-
----
-
-## 3. Cấu trúc thư mục dự án hoàn chỉnh (thực tế)
+## Cấu trúc repo sau khi hoàn thành
 
 ```text
-oss (Root)
+oss
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   └── bug_report.yml          ✅ Biểu mẫu báo lỗi tự động
-│   └── PULL_REQUEST_TEMPLATE.md    ✅ Biểu mẫu kiểm duyệt code tự động
-├── CODE_OF_CONDUCT.md              ✅ Luật ứng xử văn minh
-├── CONTRIBUTING.md                 ✅ Cẩm nang hướng dẫn viết code
-├── LICENSE                         ✅ Giấy phép bản quyền MIT
-├── README.md                       ✅ Mặt tiền trang chủ dự án
-├── SECURITY.md                     ✅ Chính sách bảo mật riêng tư
-└── lab_guide_standardizing_oss_community_profile.md   (tài liệu gốc)
+│   │   └── bug_report.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+├── screenshots/
+│   ├── 01-repo-overview.png
+│   ├── 02-license.png
+│   ├── 03-contributing.png
+│   ├── 04-code-of-conduct.png
+│   ├── 05-security-policy.png
+│   ├── 06-issue-template.png
+│   ├── 07-pr-template.png
+│   ├── 08-community-standards.png
+│   └── 09-github-tree.png
+├── BAO_CAO_THUC_HANH.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+└── SECURITY.md
 ```
 
-Lệnh kiểm tra đã chạy:
+## Ảnh chụp màn hình
 
-```bash
-find . -type f -not -path './.git/*' | sort
-```
+Mấy ảnh dưới được chụp trực tiếp từ repo đang chạy, lưu trong thư mục `screenshots/`.
 
----
+- `01-repo-overview.png`: trang chủ repo, thấy đủ các file và badge MIT license / Code of conduct / Contributing / Security policy.
+- `02-license.png`: nội dung `LICENSE`.
+- `03-contributing.png`: nội dung `CONTRIBUTING.md`.
+- `04-code-of-conduct.png`: nội dung `CODE_OF_CONDUCT.md`.
+- `05-security-policy.png`: nội dung `SECURITY.md`.
+- `06-issue-template.png`: file `bug_report.yml`.
+- `07-pr-template.png`: file `PULL_REQUEST_TEMPLATE.md`.
+- `08-community-standards.png`: trang Community Standards, cả 8 mục đều đã tick xanh.
+- `09-github-tree.png`: cây thư mục `.github/` chứa cả hai mẫu.
 
-## 4. Phần cần thực hiện trên giao diện GitHub (chưa tự động hóa được)
-
-Các thao tác sau bắt buộc phải làm trên Web GitHub và cần tài khoản/quyền truy cập, nên **chưa được thực thi** trong môi trường này:
-
-- [x] Tạo repository cá nhân trên GitHub và push 7 tệp tin vừa tạo lên nhánh `main` — **Đã hoàn tất** ➔ https://github.com/nv-hoai/oss
-  ```bash
-  git init
-  git add .
-  git commit -m "docs: add OSS community profile files"
-  git branch -M main
-  git remote add origin <repo-url>
-  git push -u origin main
-  ```
-- [ ] (Tùy chọn) Tạo `LICENSE` bằng nút **Choose a license template** để GitHub tự điền metadata giấy phép.
-- [ ] Mở tab **Issues ➔ New Issue** để xác nhận biểu mẫu Bug Report tự hiện.
-- [ ] Mở thử một Pull Request để xác nhận `PULL_REQUEST_TEMPLATE.md` tự hiện.
-- [ ] Kiểm tra **Community Profile** (Insights ➔ Community Standards) đạt **100% – màu xanh lá**.
-- [x] Chụp màn hình minh chứng các bước — **Đã hoàn tất** cho toàn bộ trang công khai, xem [mục 6](#6-ảnh-chụp-màn-hình-minh-chứng-screenshots).
-- [ ] Chụp màn hình giao diện **New Issue** (biểu mẫu bug report) — trang này **yêu cầu đăng nhập GitHub** nên chưa chụp được ẩn danh; cần chụp thủ công khi đã đăng nhập.
-
----
-
-## 5. Ghi chú
-
-- Nội dung tất cả tệp tin được sao chép **nguyên văn** từ khung chuẩn trong tài liệu, chỉ thay các giá trị điền được (`LICENSE` năm + tên).
-- Hai email trong khung mẫu (`admin-project@email.com`, `security-report@yourdomain.com`) là placeholder — nên cập nhật email thật trước khi công bố dự án.
-- Môi trường hiện tại không có trình phân tích YAML (`pyyaml`/`ruby`), nên `bug_report.yml` được kiểm tra bằng đối chiếu cấu trúc schema GitHub Issue Forms thay vì parse tự động. Nội dung trùng khớp 100% với mẫu chuẩn trong tài liệu.
-
----
-
-## 6. Ảnh chụp màn hình minh chứng (Screenshots)
-
-Toàn bộ ảnh dưới đây được chụp trực tiếp từ repository đang chạy tại https://github.com/nv-hoai/oss, lưu trong thư mục `screenshots/`.
-
-| # | Ảnh | Nội dung kiểm tra |
-| :-: | :--- | :--- |
-| 1 | `01-repo-overview.png` | Trang chủ repo: đủ 7 tệp, sidebar hiển thị badge **MIT license / Code of conduct / Contributing / Security policy** |
-| 2 | `02-license.png` | Nội dung file `LICENSE` (MIT, 2026) |
-| 3 | `03-contributing.png` | Nội dung file `CONTRIBUTING.md` |
-| 4 | `04-code-of-conduct.png` | Nội dung file `CODE_OF_CONDUCT.md` |
-| 5 | `05-security-policy.png` | Nội dung file `SECURITY.md` |
-| 6 | `06-issue-template.png` | File `.github/ISSUE_TEMPLATE/bug_report.yml` |
-| 7 | `07-pr-template.png` | File `.github/PULL_REQUEST_TEMPLATE.md` |
-| 8 | `08-community-standards.png` | **Insights ➔ Community Standards: tick xanh đủ 8 mục (README, Code of conduct, Contributing, License, Security policy, Issue templates, Pull request template)** |
-| 9 | `09-github-tree.png` | Cây thư mục `.github/` chứa cả `ISSUE_TEMPLATE/bug_report.yml` và `PULL_REQUEST_TEMPLATE.md` |
-
-### 1. Trang chủ repository — đủ hồ sơ cộng đồng
-
-![Repo overview](screenshots/01-repo-overview.png)
-
-### 2. LICENSE (MIT)
+![Trang chủ repo](screenshots/01-repo-overview.png)
 
 ![LICENSE](screenshots/02-license.png)
 
-### 3. CONTRIBUTING.md
-
 ![CONTRIBUTING](screenshots/03-contributing.png)
 
-### 4. CODE_OF_CONDUCT.md
+![CODE_OF_CONDUCT](screenshots/04-code-of-conduct.png)
 
-![Code of Conduct](screenshots/04-code-of-conduct.png)
-
-### 5. SECURITY.md
-
-![Security Policy](screenshots/05-security-policy.png)
-
-### 6. Biểu mẫu Issue (.github/ISSUE_TEMPLATE/bug_report.yml)
+![SECURITY](screenshots/05-security-policy.png)
 
 ![Issue template](screenshots/06-issue-template.png)
 
-### 7. Biểu mẫu Pull Request (.github/PULL_REQUEST_TEMPLATE.md)
-
 ![PR template](screenshots/07-pr-template.png)
-
-### 8. Community Standards — đạt 100% Khỏe mạnh ✅
 
 ![Community Standards](screenshots/08-community-standards.png)
 
-### 9. Cây thư mục .github/
+![Cây thư mục .github](screenshots/09-github-tree.png)
 
-![.github tree](screenshots/09-github-tree.png)
+## Việc còn lại
 
-> **Ảnh còn thiếu (cần đăng nhập):** giao diện **New Issue** hiển thị biểu mẫu Bug Report (`https://github.com/nv-hoai/oss/issues/new/choose`). Trang này trả về màn hình đăng nhập khi truy cập ẩn danh, nên cần chụp thủ công sau khi đăng nhập — hoặc kết nối desktop browser để hệ thống tự chụp.
+Chỉ còn một ảnh là giao diện New Issue hiển thị biểu mẫu bug report (`https://github.com/nv-hoai/oss/issues/new/choose`). Trang này bắt đăng nhập nên khi mở ẩn danh nó đẩy về màn hình Sign in, vì vậy phải chụp thủ công lúc đã đăng nhập (hoặc kết nối desktop browser để mình chụp hộ).
 
+## Vài lưu ý
+
+- Hai địa chỉ email trong `CODE_OF_CONDUCT.md` và `SECURITY.md` là placeholder của đề bài, nên thay bằng email thật trước khi công khai dự án.
+- Máy này không có sẵn trình đọc YAML (thiếu `pyyaml` và `ruby`), nên `bug_report.yml` mình kiểm tra bằng cách đối chiếu cấu trúc theo schema GitHub Issue Forms chứ không parse tự động. Nội dung vẫn khớp hoàn toàn với mẫu trong tài liệu.
