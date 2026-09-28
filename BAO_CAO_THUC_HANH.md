@@ -3,6 +3,7 @@
 - **Thời gian thực hiện:** 2026-09-28
 - **Thư mục dự án:** `/home/nvhoai/projects/personal/opensource/oss`
 - **Tài liệu gốc:** `lab_guide_standardizing_oss_community_profile.md`
+- **Link repository:** https://github.com/nv-hoai/oss (public, nhánh mặc định `main`)
 
 ---
 
@@ -98,7 +99,7 @@ find . -type f -not -path './.git/*' | sort
 
 Các thao tác sau bắt buộc phải làm trên Web GitHub và cần tài khoản/quyền truy cập, nên **chưa được thực thi** trong môi trường này:
 
-- [ ] Tạo repository cá nhân trên GitHub và push 7 tệp tin vừa tạo lên nhánh `main`:
+- [x] Tạo repository cá nhân trên GitHub và push 7 tệp tin vừa tạo lên nhánh `main` — **Đã hoàn tất** ➔ https://github.com/nv-hoai/oss
   ```bash
   git init
   git add .
