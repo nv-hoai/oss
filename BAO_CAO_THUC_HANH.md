@@ -94,12 +94,3 @@ Mấy ảnh dưới được chụp trực tiếp từ repo đang chạy, lưu t
 ![Community Standards](screenshots/08-community-standards.png)
 
 ![Cây thư mục .github](screenshots/09-github-tree.png)
-
-## Việc còn lại
-
-Chỉ còn một ảnh là giao diện New Issue hiển thị biểu mẫu bug report (`https://github.com/nv-hoai/oss/issues/new/choose`). Trang này bắt đăng nhập nên khi mở ẩn danh nó đẩy về màn hình Sign in, vì vậy phải chụp thủ công lúc đã đăng nhập (hoặc kết nối desktop browser để mình chụp hộ).
-
-## Vài lưu ý
-
-- Hai địa chỉ email trong `CODE_OF_CONDUCT.md` và `SECURITY.md` là placeholder của đề bài, nên thay bằng email thật trước khi công khai dự án.
-- Máy này không có sẵn trình đọc YAML (thiếu `pyyaml` và `ruby`), nên `bug_report.yml` mình kiểm tra bằng cách đối chiếu cấu trúc theo schema GitHub Issue Forms chứ không parse tự động. Nội dung vẫn khớp hoàn toàn với mẫu trong tài liệu.
