@@ -18,6 +18,7 @@
 | 5 | Biểu mẫu Issue tự động | `.github/ISSUE_TEMPLATE/bug_report.yml` | ✅ Hoàn thành |
 | 6 | Biểu mẫu Pull Request tự động | `.github/PULL_REQUEST_TEMPLATE.md` | ✅ Hoàn thành |
 | — | Mặt tiền trang chủ dự án | `README.md` | ✅ Hoàn thành |
+| — | Ảnh chụp màn hình minh chứng | `screenshots/` (9 ảnh) | ✅ Hoàn thành (thiếu 1 ảnh cần đăng nhập — xem mục 6) |
 
 > **Kết luận:** 7/7 tệp tin trong cấu trúc hồ sơ cộng đồng hoàn chỉnh đã được tạo đúng vị trí và đúng nội dung theo hướng dẫn.
 
@@ -112,7 +113,8 @@ Các thao tác sau bắt buộc phải làm trên Web GitHub và cần tài kho�
 - [ ] Mở tab **Issues ➔ New Issue** để xác nhận biểu mẫu Bug Report tự hiện.
 - [ ] Mở thử một Pull Request để xác nhận `PULL_REQUEST_TEMPLATE.md` tự hiện.
 - [ ] Kiểm tra **Community Profile** (Insights ➔ Community Standards) đạt **100% – màu xanh lá**.
-- [ ] Chụp màn hình minh chứng các bước và dán kèm link repo theo yêu cầu phần "BÁO CÁO THỰC HÀNH".
+- [x] Chụp màn hình minh chứng các bước — **Đã hoàn tất** cho toàn bộ trang công khai, xem [mục 6](#6-ảnh-chụp-màn-hình-minh-chứng-screenshots).
+- [ ] Chụp màn hình giao diện **New Issue** (biểu mẫu bug report) — trang này **yêu cầu đăng nhập GitHub** nên chưa chụp được ẩn danh; cần chụp thủ công khi đã đăng nhập.
 
 ---
 
@@ -121,3 +123,60 @@ Các thao tác sau bắt buộc phải làm trên Web GitHub và cần tài kho�
 - Nội dung tất cả tệp tin được sao chép **nguyên văn** từ khung chuẩn trong tài liệu, chỉ thay các giá trị điền được (`LICENSE` năm + tên).
 - Hai email trong khung mẫu (`admin-project@email.com`, `security-report@yourdomain.com`) là placeholder — nên cập nhật email thật trước khi công bố dự án.
 - Môi trường hiện tại không có trình phân tích YAML (`pyyaml`/`ruby`), nên `bug_report.yml` được kiểm tra bằng đối chiếu cấu trúc schema GitHub Issue Forms thay vì parse tự động. Nội dung trùng khớp 100% với mẫu chuẩn trong tài liệu.
+
+---
+
+## 6. Ảnh chụp màn hình minh chứng (Screenshots)
+
+Toàn bộ ảnh dưới đây được chụp trực tiếp từ repository đang chạy tại https://github.com/nv-hoai/oss, lưu trong thư mục `screenshots/`.
+
+| # | Ảnh | Nội dung kiểm tra |
+| :-: | :--- | :--- |
+| 1 | `01-repo-overview.png` | Trang chủ repo: đủ 7 tệp, sidebar hiển thị badge **MIT license / Code of conduct / Contributing / Security policy** |
+| 2 | `02-license.png` | Nội dung file `LICENSE` (MIT, 2026) |
+| 3 | `03-contributing.png` | Nội dung file `CONTRIBUTING.md` |
+| 4 | `04-code-of-conduct.png` | Nội dung file `CODE_OF_CONDUCT.md` |
+| 5 | `05-security-policy.png` | Nội dung file `SECURITY.md` |
+| 6 | `06-issue-template.png` | File `.github/ISSUE_TEMPLATE/bug_report.yml` |
+| 7 | `07-pr-template.png` | File `.github/PULL_REQUEST_TEMPLATE.md` |
+| 8 | `08-community-standards.png` | **Insights ➔ Community Standards: tick xanh đủ 8 mục (README, Code of conduct, Contributing, License, Security policy, Issue templates, Pull request template)** |
+| 9 | `09-github-tree.png` | Cây thư mục `.github/` chứa cả `ISSUE_TEMPLATE/bug_report.yml` và `PULL_REQUEST_TEMPLATE.md` |
+
+### 1. Trang chủ repository — đủ hồ sơ cộng đồng
+
+![Repo overview](screenshots/01-repo-overview.png)
+
+### 2. LICENSE (MIT)
+
+![LICENSE](screenshots/02-license.png)
+
+### 3. CONTRIBUTING.md
+
+![CONTRIBUTING](screenshots/03-contributing.png)
+
+### 4. CODE_OF_CONDUCT.md
+
+![Code of Conduct](screenshots/04-code-of-conduct.png)
+
+### 5. SECURITY.md
+
+![Security Policy](screenshots/05-security-policy.png)
+
+### 6. Biểu mẫu Issue (.github/ISSUE_TEMPLATE/bug_report.yml)
+
+![Issue template](screenshots/06-issue-template.png)
+
+### 7. Biểu mẫu Pull Request (.github/PULL_REQUEST_TEMPLATE.md)
+
+![PR template](screenshots/07-pr-template.png)
+
+### 8. Community Standards — đạt 100% Khỏe mạnh ✅
+
+![Community Standards](screenshots/08-community-standards.png)
+
+### 9. Cây thư mục .github/
+
+![.github tree](screenshots/09-github-tree.png)
+
+> **Ảnh còn thiếu (cần đăng nhập):** giao diện **New Issue** hiển thị biểu mẫu Bug Report (`https://github.com/nv-hoai/oss/issues/new/choose`). Trang này trả về màn hình đăng nhập khi truy cập ẩn danh, nên cần chụp thủ công sau khi đăng nhập — hoặc kết nối desktop browser để hệ thống tự chụp.
+
